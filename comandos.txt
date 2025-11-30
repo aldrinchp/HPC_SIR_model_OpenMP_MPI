@@ -1,0 +1,28 @@
+mpicc -O3 -march=native -fopenmp -o sir2d_mpi_omp sir2d_mpi_omp.c -lm
+
+mpirun -np 4 ./sir2d_mpi_omp   --nx 1024 --ny 1024   --beta 0.6 --gamma 0.08 --D 0.2   --dt 0.1 --tmax 200 --snap_every 50   --threads 8
+
+
+
+cd /media/aldrinchp/KAli-HDD/Subjects/8vo_AA_MA/HPC/FINAL/Hibrido
+
+# Ejemplo básico (un foco central)
+mpirun -np 1 ./sir2d_mpi_omp \
+  --nx 1024 --ny 1024 \
+  --beta 0.6 --gamma 0.08 --D 0.2 \
+  --dt 0.1 --tmax 200 \
+  --snap_every 25 \
+  --out_prefix frames/sir2d \
+  --threads 8
+
+
+  # Ejemplo con 3 focos
+mpirun -np 1 ./sir2d_mpi_omp \
+  --nx 1024 --ny 1024 \
+  --beta 0.6 --gamma 0.08 --D 0.2 \
+  --dt 0.1 --tmax 200 \
+  --snap_every 25 \
+  --out_prefix frames/mi_simulacion \
+  --i0frac 0.03 --sigma 6 \
+  --centers "256,256;768,768;512,512" \
+  --threads 8
