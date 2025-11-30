@@ -102,5 +102,4 @@ Salidas típicas (en `results_mpi/plots/`):
 ## Notas finales
 
 - Revisa los scripts `run_experiments.sh` y `run_mpi_experiments.sh` antes de ejecutar para ajustar parámetros por defecto a tu máquina.
-- Si detectas discrepancias entre lo descrito en este README y el contenido de los scripts, indícalo y puedo actualizar el README o los scripts según convenga.
 
